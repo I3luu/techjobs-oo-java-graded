@@ -36,6 +36,30 @@ public class Job {
         return id == job.id;
     }
 
+
+    @Override
+
+        public String toString() {
+        if(employer.getValue().isEmpty()){
+            getEmployer().setValue("Data not available");
+        }
+        if (location.getValue().isEmpty()) {
+            getLocation().setValue("Data not available");
+        }
+        if (positionType.getValue().isEmpty()){
+            getPositionType().setValue("Data not available");
+        }
+        if(coreCompetency.getValue().isEmpty()){
+            getCoreCompetency().setValue("Data not available");
+        }
+            return "\nID: " + id + "\n" +
+                    "Name: " + name + "\n" +
+                    "Employer: " + employer + "\n" +
+                    "Location: " + location + "\n" +
+                    "Position Type: " + positionType + "\n" +
+                    "Core Competency: " + coreCompetency + "\n";
+        }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
